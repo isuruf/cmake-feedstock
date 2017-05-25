@@ -2,6 +2,7 @@
 
 export CC=gcc
 export CXX=g++
+export MACOSX_DEPLOYMENT_TARGET=10.10
 
 if [[ "$(uname)" == 'Darwin' ]];
 then
