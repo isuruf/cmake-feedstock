@@ -35,6 +35,7 @@ requirements:
     - zlib 1.2.*     # [unix]
     - libuv          # [unix]
     - rhash          # [unix]
+    - gcc            # [unix]
 
   run:
     - bzip2 1.0.*    # [unix]
