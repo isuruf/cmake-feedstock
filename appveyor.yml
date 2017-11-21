@@ -23,6 +23,10 @@ environment:
 platform:
     - x64
 
+artifacts:
+    # Store built conda packages as artifacts
+    - path: 'conda_packages\*.bz2'
+
 install:
     # If there is a newer build queued for the same PR, cancel this one.
     - cmd: |
@@ -49,10 +53,13 @@ install:
     - cmd: conda install -n root --quiet --yes conda-forge-build-setup
     - cmd: run_conda_forge_build_setup
 
+
 # Skip .NET project specific build phase.
 build: off
 
 test_script:
     - conda build recipe --quiet
+    - cmd: 'copy /Y C:\bld\win-64\*.bz2 conda_packages || cmd /c "exit /b 0"'
+
 deploy_script:
     - cmd: upload_or_check_non_existence .\recipe conda-forge --channel=main
