@@ -15,8 +15,6 @@ export DEBUG_CXXFLAGS=$(echo "$DEBUG_CXXFLAGS" |sed -e "s|-I$PREFIX/include||")
              --prefix="${PREFIX}" \
              --system-libs \
              --no-qt-gui \
-             --no-system-libarchive \
-             --no-system-jsoncpp \
              --parallel=${CPU_COUNT} \
              -- \
              -DCMAKE_BUILD_TYPE:STRING=Release \

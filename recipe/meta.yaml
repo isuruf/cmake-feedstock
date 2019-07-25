@@ -20,16 +20,19 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make            # [unix]
+    - cmake-binary    # [win]
 
   host:
     - bzip2           # [unix]
-    - curl 7.61.1           # [unix]
+    - curl 7.61.1     # [unix]
     - expat           # [unix]
     - ncurses         # [unix]
     - xz              # [unix]
     - zlib            # [unix]
     - libuv           # [unix]
     - rhash           # [unix]
+    - libarchive      # [unix]
+    - jsoncpp         # [unix]
 
   run:
     - bzip2           # [unix]
@@ -40,6 +43,7 @@ requirements:
     - zlib            # [unix]
     - libuv           # [unix]
     - rhash           # [unix]
+    - libarchive      # [unix]
     - vs2015_runtime  # [win]
 
 test:
@@ -56,6 +60,7 @@ about:
   home: http://www.cmake.org/
   license: BSD 3-clause
   license_family: BSD
+  license_file: Copyright.txt
   summary: CMake is an extensible, open-source system that manages the build process
 
 extra:
